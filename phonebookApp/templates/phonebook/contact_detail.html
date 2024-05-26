@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ contact.name }}</title>
+</head>
+<body>
+    <h1>{{ contact.name }}</h1>
+    <p>Email: {{ contact.email }}</p>
+    <p>Address: {{ contact.address }}</p>
+    <h2>Phone Numbers</h2>
+    <ul>
+        {% for phone_number in contact.phone_number.all %}
+            <li>{{ phone_number.phone_number }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'contact_list' %}">Back to Contact List</a>
+</body>
+</html>
